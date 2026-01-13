@@ -1,0 +1,9 @@
+motions:
+- file: SSM_synced/20160330_03333/jiggle_on_toes_poses.motion
+  fps: 59.0
+  idx: 108
+  sub_motions:
+  - timings:
+      end: 5.406779661016949
+      start: 0.0
+  weight: 1.0

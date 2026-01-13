@@ -8,5 +8,7 @@ rendered_images/*
 results/*
 .DS_Store
 **/.DS_Store
-
+*.pkl
+*.npz
+AMASS
 output/

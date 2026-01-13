@@ -1,0 +1,17 @@
+motions:
+# - file: 20251225/taiji_smpl_amass.motion
+#   fps: 25
+#   idx: 1
+#   sub_motions:
+#   - timings:
+#       end: 390.0
+#       start: 0.0
+#   weight: 1.0
+- file: 20251225/taiji_fbx_amass.motion
+  fps: 30
+  idx: 1
+  sub_motions:
+  - timings:
+      end: 390.0
+      start: 0.0
+  weight: 1.0

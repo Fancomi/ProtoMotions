@@ -217,12 +217,14 @@ print("  ; - cancel recording")
 print("  O - toggle camera target")
 print("  Q - close simulator")
 
+print("simulator_cfg.num_envs:", simulator_cfg.num_envs)
+print("robot_cfg.number_of_actions:", robot_cfg.number_of_actions)
 try:
     step_count = 0
     while simulator.is_simulation_running():
         # Generate random actions for all environments
         # Actions are position targets
-        actions = torch.randn(
+        actions = torch.zeros( #randn
             simulator_cfg.num_envs, robot_cfg.number_of_actions, device=device
         )
 

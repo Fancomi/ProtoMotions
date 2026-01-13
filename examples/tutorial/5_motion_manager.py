@@ -171,9 +171,10 @@ teapot_rotation = torch.from_numpy(teapot_data['rotation']).float()
 print(f"  Type: {teapot_data['type']}")
 print(f"  Frames: {teapot_translation.shape[0]}, FPS: {teapot_data['fps']}")
 print(f"  Mesh path: {teapot_data['object_path']}")
+print(f"  translation: \n{teapot_translation[0]}\n{teapot_translation[-1]}")
 
 # Use URDF for isaacgym, USDA for isaaclab
-teapot_mesh_path = teapot_data['object_path']
+teapot_mesh_path = f"{data_dir}/teapot.usda" #teapot_data['object_path']
 if args.simulator == "isaaclab":
     pass
 elif args.simulator == "newton":
@@ -181,6 +182,7 @@ elif args.simulator == "newton":
 else:
     teapot_mesh_path = teapot_mesh_path.replace('.usda', '.urdf')
 
+print("teapot_mesh_path:", teapot_mesh_path)
 teapot = MeshSceneObject(
     object_path=teapot_mesh_path,
     options=ObjectOptions(

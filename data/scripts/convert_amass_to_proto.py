@@ -20,9 +20,12 @@
 # python data/scripts/convert_amass_to_proto.py /home/amassx --humanoid-type=smplx --robot-type=g1
 
 import os
+import sys
 from pathlib import Path
 import pickle
 from typing import List
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 import yaml
 import numpy as np

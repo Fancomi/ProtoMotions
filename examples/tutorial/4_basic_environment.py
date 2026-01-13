@@ -133,7 +133,7 @@ else:
 chair = MeshSceneObject(
     object_path=object_path,
     options=chair_options,
-    translation=(0.0, 0.9, 0.0),
+    translation=(0.0, 0.3, 0.0),
     rotation=(0.0, 0.0, 0.0, 1.0),
 )
 
