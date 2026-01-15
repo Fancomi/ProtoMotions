@@ -26,7 +26,4 @@
 
 
 # =============================
-# 创建更长的绳索(20个链接)
-# python custom/rope_object.py
-
-# python custom/rope_demo.py --simulator isaaclab --robot smpl
+python custom/test_usd_utils.py
