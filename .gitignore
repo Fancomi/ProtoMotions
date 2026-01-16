@@ -12,3 +12,4 @@ results/*
 *.npz
 AMASS
 output/
+wandb

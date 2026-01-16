@@ -185,35 +185,35 @@ else:
 print("teapot_mesh_path:", teapot_mesh_path)
 
 # 完全按照动画
-# teapot = MeshSceneObject(
-#     object_path=teapot_mesh_path,
-#     options=ObjectOptions(
-#         fix_base_link=False,  # Dynamic object
-#         density=1000,
-#         angular_damping=0.01,
-#         linear_damping=0.01,
-#         max_angular_velocity=100.0,
-#     ),
-#     translation=teapot_translation,
-#     rotation=teapot_rotation,
-#     fps=teapot_data['fps'],
-# )
-
-# 只有第一帧位姿
 teapot = MeshSceneObject(
     object_path=teapot_mesh_path,
     options=ObjectOptions(
-        fix_base_link=False,  # 关键：必须为 False，表示它是动态的刚体
-        density=1,
+        fix_base_link=False,  # Dynamic object
+        density=1000,
         angular_damping=0.01,
         linear_damping=0.01,
         max_angular_velocity=100.0,
     ),
-    # 只取第 0 个数据，变成静态的初始位姿
-    translation=teapot_translation[0], 
-    rotation=teapot_rotation[0],
-    # fps=None, # 不需要 fps，因为没有动画数据了
+    translation=teapot_translation,
+    rotation=teapot_rotation,
+    fps=teapot_data['fps'],
 )
+
+# # 只有第一帧位姿
+# teapot = MeshSceneObject(
+#     object_path=teapot_mesh_path,
+#     options=ObjectOptions(
+#         fix_base_link=False,  # 关键：必须为 False，表示它是动态的刚体
+#         density=1,
+#         angular_damping=0.01,
+#         linear_damping=0.01,
+#         max_angular_velocity=100.0,
+#     ),
+#     # 只取第 0 个数据，变成静态的初始位姿
+#     translation=teapot_translation[0], 
+#     rotation=teapot_rotation[0],
+#     # fps=None, # 不需要 fps，因为没有动画数据了
+# )
 
 
 # Load table (static object)

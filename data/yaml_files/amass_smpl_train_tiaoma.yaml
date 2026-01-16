@@ -1,0 +1,9 @@
+motions:
+- file: 20260115/tiaoma_fbx_amass.motion
+  fps: 30.0
+  idx: 1
+  sub_motions:
+  - timings:
+      start: 0.0
+      end: 10.0
+  weight: 1.0

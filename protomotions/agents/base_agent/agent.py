@@ -802,6 +802,27 @@ class BaseAgent:
 
         # wandb logger does this: assert rank_zero_only.rank == 0
         self.fabric.log_dict(aggregated_log_dict)
+        
+        # Print training progress to console (only on rank 0)
+        if self.fabric.global_rank == 0:
+            epoch = aggregated_log_dict.get("epoch", self.current_epoch)
+            fps = aggregated_log_dict.get("times/fps_last_epoch", 0)
+            episode_reward = aggregated_log_dict.get("info/episode_reward", 0)
+            total_reward = aggregated_log_dict.get("rewards/total_rewards", 0)
+            
+            # Extract loss values
+            actor_loss = aggregated_log_dict.get("losses/actor_loss", None)
+            critic_loss = aggregated_log_dict.get("losses/critic_loss", None)
+            
+            # Build console output
+            console_msg = f"Epoch {epoch:4d} | FPS: {fps:7.1f} | Reward: {episode_reward:8.3f} | Total: {total_reward:7.3f}"
+            
+            if actor_loss is not None:
+                console_msg += f" | Actor Loss: {actor_loss:8.4f}"
+            if critic_loss is not None:
+                console_msg += f" | Critic Loss: {critic_loss:8.4f}"
+            
+            print(console_msg)
 
     # -----------------------------
     # Helper Functions

@@ -17,13 +17,13 @@
 #     --simulator isaaclab
 
 
-# python examples/tutorial/6_mimic_environment.py \
-#     --simulator isaaclab
+python examples/tutorial/6_mimic_environment.py \
+    --simulator isaacgym
 
 
 # python examples/tutorial/7_deepmimic.py \
 #     --simulator isaaclab
 
 
-# =============================
-python custom/test_usd_utils.py
+# # =============================
+# python custom/test_usd_utils.py

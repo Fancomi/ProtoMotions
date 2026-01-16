@@ -11,18 +11,32 @@
 #     --batch-size 4096 \
 #     --ngpu 1
 
+# # 基于预训练
+# python protomotions/train_agent.py \
+# --robot-name smpl \
+# --simulator isaaclab \
+# --experiment-path examples/experiments/mimic/mlp.py \
+# --experiment-name smpl_finetune_taiji \
+# --motion-file AMASS/TAIJI_/amass_smpl_train_taiji.pt \
+# --checkpoint data/pretrained_models/motion_tracker/smpl/last.ckpt \
+# --num-envs 4096 \
+# --batch-size 4096 #\
+# --use-wandb
+
+
+
 # 基于预训练
 python protomotions/train_agent.py \
 --robot-name smpl \
---simulator isaaclab \
---experiment-path examples/experiments/mimic/mlp.py \
---experiment-name smpl_finetune_taiji \
---motion-file AMASS/TAIJI_/amass_smpl_train_taiji.pt \
+--simulator isaacgym \
 --checkpoint data/pretrained_models/motion_tracker/smpl/last.ckpt \
---num-envs 4096 \
---batch-size 4096 #\
-# --use-wandb
-
+--experiment-path examples/experiments/mimic/mlp.py \
+--experiment-name smpl_finetune_tiaoma \
+--motion-file AMASS/TIAOMA_/amass_smpl_train_tiaoma.pt \
+--scenes-file AMASS/tiaoma_scene.pt \
+--num-envs 512 \
+--batch-size 512 \
+--use-wandb
 
 # # ADD
 # # source /home/baidu/env_isaaclab/bin/activate
